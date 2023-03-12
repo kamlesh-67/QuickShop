@@ -397,13 +397,14 @@ header .menu ul li a {
     margin-left: 5px;
 }
 .contect .contect-details {
-    width: 100%;
+    width: 110%;
     border-top: 1px solid gray;
 }
 .contect .social-links {
     margin-top: 12px;
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 .contect .social-links {
     color: var(--primery);
