@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="index-style.css">
     <title>QuickShop - buy what you want </title>
 </head>
-<body>
+<body  id="body">
     <!-- Pre Loader Start -->
     <div class="container-preloader" id="container">
         <div class="wrapper5 wrapper">
@@ -36,6 +36,8 @@
             </ul>
         </div>
     </header>
+    
+    
     <div class="hero-container">
         <img src="gellary/hero_illustration.svg" alt="">
         <div class="hero-text">

@@ -1,0 +1,271 @@
+:root {
+    --primery: #ffbf3f;
+    --primery-hover: #ce9420;
+    --secondary: #ffffff;
+    --buttons: #ffbf3f;
+    --button-secendary: #7165ff;
+    --preloader-bg: #7265ff7f;
+    --transperent: #00000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+}
+
+.search {
+    width: 25vw;
+}
+
+.search input {
+    width: 25vw;
+    height: 2rem;
+    position: absolute;
+    top: 10px;
+    outline: none;
+    border-radius: 25px;
+    border: 1px solid #dfdedf;
+    padding-left: 2.1rem;
+    padding-right: 1rem;
+    font-size: 17px;
+}
+
+.search .icon {
+    position: absolute;
+    z-index: 10;
+    height: 2rem;
+    width: 2rem;
+    top: 10px;
+    border-radius: 25px;
+    border: 1px solid #dfdedf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--primery);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    border: 1px solid #ffffff;
+}
+
+#myBtn:hover {
+    background-color: var(--primery-hover);
+}
+
+header {
+    height: 3rem;
+    max-width: 100vw;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.logo {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: var(--primery);
+}
+
+.main-container {
+    display: flex;
+    margin-top: 20px;
+}
+
+.fillter-box {
+    width: 300px;
+}
+
+.fillter-box {
+    width: 17vw;
+    height: 500px;
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+
+    /* justify-content: cente; */
+}
+
+.fillter-box p {
+    height: 1.5rem;
+    width: 70%;
+    /* background-color: antiquewhite; */
+    border-bottom: 1px solid #ded9d9;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: sans-serif;
+    font-size: 14px;
+
+}
+
+.fillter-box .rating,
+.fillter-box .price,
+.fillter-box .sort {
+    padding: 10px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.fillter-box button {
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px 40px;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    background: var(--primery);
+}
+
+.products {
+    /* width: 100vw; */
+    margin: 0 auto;
+}
+
+.products h2 {
+    width: 150px;
+    color: var(--primery);
+    margin: 20px auto;
+    font-size: xx-large;
+}
+
+.products .products-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.products .products-grid {
+    display: grid;
+    width: 60%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.products .box {
+    padding-top: 4px;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px 0px #33333388;
+}
+
+.products .box img {
+    height: 200px;
+    border-radius: 7px;
+}
+
+.products .box .card-info {
+    height: 200px;
+    width: 90%;
+}
+
+.products .card-info .title {
+    overflow: hidden;
+    font-weight: bolder;
+    font-size: 17px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-align: center;
+    height: 24px;
+    margin: 4px 0;
+}
+
+.products .card-info .description {
+    overflow: hidden;
+    color: #6c757d !important;
+    font-size: 15px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-align: center;
+    height: 80px;
+}
+
+.products .card-info .price {
+    overflow: hidden;
+    font-weight: bolder;
+    font-size: 17px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-align: center;
+    height: 25px;
+}
+
+.products .card-info .rating {
+    overflow: hidden;
+    font-size: 15px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-align: center;
+    height: 22px;
+}
+
+.products .card-info .review {
+    overflow: hidden;
+    font-size: 14px;
+    color: var(--primery);
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-align: center;
+}
+
+footer {
+    margin-top: 50px;
+    height: 100px;
+    background-color: var(--primery);
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+footer .logo {
+    margin: 0 auto;
+    width: fit-content;
+    color: var(--secondary);
+}
+
+footer p {
+    margin: 0 auto;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid gray;
+}
