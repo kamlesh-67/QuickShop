@@ -1,18 +1,3 @@
-:root {
-    --primery: #ffbf3f;
-    --primery-hover: #ce9420;
-    --secondary: #ffffff;
-    --buttons: #ffbf3f;
-    --button-secendary: #7165ff;
-    --preloader-bg: #7265ff7f;
-}
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-
 header {
     height: 3rem;
     max-width: 100vw;
@@ -21,6 +6,7 @@ header {
     align-items: center;
     justify-content: space-evenly;
 }
+
 .logo {
     height: 3rem;
     display: flex;
@@ -60,19 +46,23 @@ header {
     align-items: center;
     justify-content: center;
 }
+
 footer {
     height: 100px;
     background-color: var(--primery);
 }
+
 footer a {
     text-decoration: none;
     color: black;
 }
+
 footer .logo {
     margin: 0 auto;
     width: fit-content;
     color: var(--secondary);
 }
+
 footer p {
     margin: 0 auto;
     width: 300px;
@@ -81,43 +71,56 @@ footer p {
     border-top: 1px solid gray;
 }
 
-.container{
+.container {
     height: 79.8vh;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     margin: 20px 0;
 }
-.container .image{
+
+.container .image {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.container .image img{
-    height: 60%;   
+
+.container .image img {
+    height: 60%;
 }
-.container .info{
+
+.container .info {
     padding-top: 120px;
     display: flex;
     flex-direction: column;
 }
 
 
-.title,.description,.price,.rating,.review{
+.title,
+.description,
+.price,
+.rating,
+.review {
     margin: 20px 0;
 }
-.review{
+
+.review {
     font-size: 12px;
     color: gray;
 }
-.info button{
+
+.info a {
     height: 50px;
     width: 150px;
     margin-top: 100px;
-margin-left: 70%;
-background-color: var(--primery);
-border-radius: 5px;
-border: 1px solid #dfdedf;
+    margin-left: 70%;
+    background-color: var(--primery);
+    border-radius: 5px;
+    border: 1px solid #dfdedf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.info button:hover{
+
+.info a:hover {
     background-color: var(--primery-hover);
 }

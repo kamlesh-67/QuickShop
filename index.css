@@ -1,22 +1,4 @@
-:root {
-    --primery: #ffbf3f;
-    --primery-hover: #ce9420;
-    --secondary: #ffffff;
-    --buttons: #ffbf3f;
-    --button-secendary: #7165ff;
-    --preloader-bg: #7265ff7f;
-}
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@800&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    scroll-behavior: smooth;
-}
-a{
-    text-decoration: none;
-}
+
 body {
     overflow-x: hidden;
 }

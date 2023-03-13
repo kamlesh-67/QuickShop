@@ -13,6 +13,7 @@
 
     <title>Products - QuickShop</title>
 
+    <link rel="stylesheet" href="root.css">
     <link rel="stylesheet" href="products.css">
 </head>
 <?php
@@ -75,7 +76,7 @@ echo '<script>alert(hello,world)</script>';
                         $price = ($i + 2 * 30);
                         $rating = ($i + 1);
                         $review = ($i + 1 * 12);
-                        echo '<div class="box">
+                        echo '<a href="detail.php?id=12" style="color:#000;"><div class="box">
                     <div class="img">
                         <img src="gellary/card_placeholder.png" alt="">
                     </div>
@@ -94,7 +95,7 @@ echo '<script>alert(hello,world)</script>';
                         echo '</div>
                     <div class="review" > ' . $review . ' Reviews</div>                   
                     </div>
-                </div>';
+                </div></a>';
                     }
                     ?>
                 </div>

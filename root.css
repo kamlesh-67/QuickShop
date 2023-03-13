@@ -1,0 +1,24 @@
+:root {
+    --primery: #ffbf3f;
+    --primery-hover: #ce9420;
+    --secondary: #ffffff;
+    --buttons: #ffbf3f;
+    --button-secendary: #7165ff;
+    --preloader-bg: #7265ff7f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@800&display=swap');
+
+a{
+    text-decoration: none;
+}
+button{
+    cursor: pointer;
+}

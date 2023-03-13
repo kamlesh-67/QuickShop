@@ -1,5 +1,14 @@
+<?php
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+    $email = $_POST['email'];
+    $name = $_POST['name'];
+    echo '<script>alert("'.$name.' \n'.$email.'\n Thanks to Contect Us 🤗")</script>';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +19,11 @@
     <link rel="manifest" href="gellary/site.webmanifest">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="root.css">
     <title>QuickShop - buy what you want </title>
 </head>
-<body  id="body">
+
+<body id="body">
     <!-- Pre Loader Start -->
     <div class="container-preloader" id="container">
         <div class="wrapper5 wrapper">
@@ -36,8 +47,8 @@
             </ul>
         </div>
     </header>
-    
-    
+
+
     <div class="hero-container">
         <img src="gellary/hero_illustration.svg" alt="">
         <div class="hero-text">
@@ -68,8 +79,8 @@
             </div>
             <div class="products-grid">
                 <?php
-                $boxs = array(0,1,2,3,4,5);
-                foreach($boxs as $i){
+                $boxs = array(0, 1, 2, 3, 4, 5);
+                foreach ($boxs as $i) {
                     $title = "Title " . ($i + 1);
                     $description = "Decription " . ($i + 1);
                     $price = ($i + 2 * 30);
@@ -102,6 +113,7 @@
         </div>
     </div>
     <div class="Brands">
+        <!-- This section need to edit and add data -->
     </div>
     <div class="contects-container">
         <h2>Contect Us</h2>
@@ -140,5 +152,7 @@
         <p>&copy; All Rights Reserved &nbsp;<a href="index.php"> QuickShop.com</a></p>
     </footer>
     <script src="script.js"></script>
+    
 </body>
+
 </html>

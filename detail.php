@@ -16,6 +16,7 @@ if(isset($_GET['id'])) {
     <link rel="icon" type="image/png" sizes="32x32" href="gellary/favicon-32x32.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="detail.css">
+    <link rel="stylesheet" href="root.css">
     <title><?php echo $title; ?></title>
 </head>
 <body>
@@ -45,8 +46,7 @@ if(isset($_GET['id'])) {
     ?></p>
     <p class="review">12 Reviews</p>
 
-
-    <button>Buy</button>
+    <a href="payment.php?id=12" style="color:#000;">Buy</a>
     </div>
 </div>
 
