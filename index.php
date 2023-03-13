@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="gellary/favicon-16x16.png">
     <link rel="manifest" href="gellary/site.webmanifest">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="index-style.css">
+    <link rel="stylesheet" href="index.css">
     <title>QuickShop - buy what you want </title>
 </head>
 <body  id="body">
@@ -43,14 +43,15 @@
         <div class="hero-text">
             <h1>QuickShop <span></span></h1>
             <h3>Buy What You Want</h3>
-            <a href="product.php">Explore</a>
+            <a href="products.php">Explore</a>
         </div>
     </div>
     <div id="about" class="about">
         <h2>About Us</h2>
         <div class="about-contect">
             <div class="about-text">
-                <p>Welcome to QuickShop, where you may find anything you need to buy! We are an online store with a huge selection of goods, including anything from electronics to fashion, furniture, and home goods to health and beauty products.</p>
+                <h3 style="color:#ffbf3f;">Welcome to QuickShop</h3>
+                <p> where you may find anything you need to buy! We are an online store with a huge selection of goods, including anything from electronics to fashion, furniture, and home goods to health and beauty products.</p>
                 <p> As time is of the essence, QuickShop makes every effort to make your buying experience as quick and simple as possible. With our simple checkout process and user-friendly website, you can quickly select what you need and have it delivered to your home.</p>
                 <p>Our goal is to offer a huge assortment of high-quality goods at affordable rates while giving our consumers a hassle-free purchasing experience. We also aim to ensure that every customer receives great customer service.</p>
             </div>
@@ -74,7 +75,8 @@
                     $price = ($i + 2 * 30);
                     $rating = ($i + 1);
                     $review = ($i + 1 * 12);
-                    echo '<div class="box">
+                    echo '<a href="detail.php?id=12" style="color:#000;">
+                    <div class="box">
                     <div class="img">
                         <img src="gellary/card_placeholder.png" alt="">
                     </div>
@@ -93,7 +95,7 @@
                     echo '</div>
                     <div class="review" > ' . $review . ' reviews</div>                   
                     </div>
-                </div>';
+                </div></a>';
                 }
                 ?>
             </div>

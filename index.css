@@ -14,6 +14,9 @@
     font-family: sans-serif;
     scroll-behavior: smooth;
 }
+a{
+    text-decoration: none;
+}
 body {
     overflow-x: hidden;
 }
@@ -226,9 +229,10 @@ header .menu ul li a {
 }
 .about .about-text {
     width: 50vw;
+    text-align: center;
 }
 .products {
-    height: 100vh;
+    height: 130vh;
     width: 100vw;
 }
 .products h2 {
@@ -241,6 +245,7 @@ header .menu ul li a {
     display: flex;
     justify-content: space-between;
     height: 90%;
+    align-items: center;
 }
 .products img {
     height: 70vh;
@@ -250,6 +255,7 @@ header .menu ul li a {
     height: 90vh;
     width: 60%;
     grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
 }
 .products .box {
     width: 300px;
