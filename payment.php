@@ -22,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="root.css">
     <title>title</title>
 </head>
@@ -35,6 +36,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <li><a href="index.php#about">About</a></li>
                 <li><a href="index.php#products">products</a></li>
                 <li><a href="index.php#contect">Contect Us</a></li>
+            </ul>
+        </div>
+        <div class="menumo">
+            <ul id="menu">
+                <li id=menu-text><i class="fa-solid fa-bars"></i></li>
+                <li id=item-one><a href="index.php">Home</a></li>
+                <li id=item-two><a href="index.php#about">About</a></li>
+                <li id=item-three><a href="index.php#products">products</a></li>
+                <li id=item-four><a href="index.php#contect">Contect Us</a></li>
             </ul>
         </div>
     </header>
@@ -96,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <p>&copy; All Rights Reserved &nbsp;<a href="index.php"> QuickShop.com</a></p>
     </footer>
-    
+
 
 
 </body>

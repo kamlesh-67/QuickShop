@@ -1,14 +1,15 @@
 <?php
 $title = "watch";
-if(isset($_GET['id'])) {
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
 } else {
     header("index.php");
-    exit; 
+    exit;
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,44 +20,60 @@ if(isset($_GET['id'])) {
     <link rel="stylesheet" href="root.css">
     <title><?php echo $title; ?></title>
 </head>
+
 <body>
-<header id="home">
+    <header id="home">
         <div class="logo">QuickShop</div>
         <div class="menu">
             <div class="search"><label for="search" class="icon"><i class="fa-solid fa-magnifying-glass"></i></label><input type="text" name="search" id="search"></div>
         </div>
     </header>
-<div class="container">
-    <div class="image">
-        <img src="gellary/card_placeholder.png" alt="">
+    <div class="container">
+        <div class="image">
+            <img src="gellary/card_placeholder.png" alt="">
+        </div>
+        <div class="info">
+
+            <h2 class="title">Title</h2>
+            <h5 class="description">description </h5>
+            <p class="price">₹600</p>
+            <p class="rating"><?php
+                                for ($i = 0; $i < 5; $i++) {
+                                    if ($i < 3) {
+                                        echo '<span class="fa fa-star" style="color:#ffd43b;"></span>';
+                                    } else {
+                                        echo '<span class="fa fa-star" style="color:#90A0A3;"></span>';
+                                    }
+                                }
+                                ?></p>
+            <p class="review">12 Reviews</p>
+            <a href="payment.php?id=12" class="buy" style="color:#000;">Buy</a>
+        </div>
+
     </div>
-    <div class="info">
-
-    <h2 class="title">Title</h2>
-    <h5 class="description">description </h5>
-    <p class="price">₹600</p>
-    <p class="rating"><?php 
-    for ($i = 0; $i < 5; $i++) {
-        if ($i < 3) {
-            echo '<i class="fa-solid fa-star" style="color:#ffd43b;"></i>';
-        } else {
-            echo '<i class="fa-regular fa-star"></i>';
-        }
-    }
-    ?></p>
-    <p class="review">12 Reviews</p>
-
-    <a href="payment.php?id=12" style="color:#000;">Buy</a>
+    <form action="detail.php?id=12" method="post"><input type="hidden" name="rating" id="rating" value=0>
+    <div class="getrating">
+        <h4>&nbsp;Rate this products </h4>
+        <input type="radio" id="star5" name="rating" value="5" />
+        <label class="star" for="star5"><span class="fa fa-star"></span></label>
+        <input type="radio" id="star4" name="rating" value="4" />
+        <label class="star" for="star4"><span class="fa fa-star"></span></label>
+        <input type="radio" id="star3" name="rating" value="3" />
+        <label class="star" for="star3"><span class="fa fa-star"></span></label>
+        <input type="radio" id="star2" name="rating" value="2" />
+        <label class="star" for="star2"><span class="fa fa-star"></span></label>
+        <input type="radio" id="star1" name="rating" value="1" />
+        <label class="star" for="star1"><span class="fa fa-star"></span></label>
     </div>
-</div>
-
-
+    <button type="submit">Submit</button></form>
     <footer>
         <div class="logo">
             QuickShop
         </div>
         <p>&copy; All Rights Reserved &nbsp;<a href="index.php"> QuickShop.com</a></p>
     </footer>
+
+    
 </body>
 
 </html>

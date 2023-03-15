@@ -32,44 +32,13 @@ echo '<script>alert(hello,world)</script>';
         </div>
     </header>
     <div class="main-container">
-        <div class="fillter-box">
-            <form action="#" method="post">
-                <div class="rating">
-                    <p>Rating</p>
-                    <div><input type="radio" name="rating" id="rating1"> <?php for ($i = 0; $i < 1; $i++) {echo '<i class="fa-solid fa-star" style="color:#ffd43b;"></i>'; } ?></div>
-                    <div><input type="radio" name="rating" id="rating2"> <?php for ($i = 0; $i < 2; $i++) {echo '<i class="fa-solid fa-star" style="color:#ffd43b;"></i>';} ?></div>
-                    <div><input type="radio" name="rating" id="rating3"> <?php for ($i = 0; $i < 3; $i++) {echo '<i class="fa-solid fa-star" style="color:#ffd43b;"></i>';} ?></div>
-                    <div><input type="radio" name="rating" id="rating4"> <?php for ($i = 0; $i < 4; $i++) {echo '<i class="fa-solid fa-star" style="color:#ffd43b;"></i>';} ?></div>
-                    <div><input type="radio" name="rating" id="rating5"> <?php for ($i = 0; $i < 5; $i++) {echo '<i class="fa-solid fa-star" style="color:#ffd43b;"></i>';} ?> </div>
-                </div>
-                <div class="price">
-                    <p>price</p>
-                    <input type="radio" name="price" id="price1"> below - 500<br>
-                    <input type="radio" name="price" id="price2"> 500 - 1000<br>
-                    <input type="radio" name="price" id="price3"> 1000 - 2000<br>
-                    <input type="radio" name="price" id="price4"> 2000 - 5000<br>
-                    <input type="radio" name="price" id="price5"> 5000 - 10000<br>
-                    <input type="radio" name="price" id="price6"> 10000 - 20000<br>
 
-                </div>
-                <div class="sort">
-                    <p>Sort</p>
-                    <input type="radio" name="sort" id="sort1"> Sort by price low to high<br>
-                    <input type="radio" name="sort" id="sort2"> Sort by price high to low<br>
-                    <input type="radio" name="sort" id="sort3"> Sort by rating low to high<br>
-                    <input type="radio" name="sort" id="sort4"> Sort by rating high to low<br>
-
-                </div>
-
-                <button type="submit">Filter</button>
-            </form>
-        </div>
 
         <div class="products">
             <div class="products-box">
                 <div class="products-grid">
                     <?php
-                    $boxs = array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+                    $boxs = array(0, 1, 2, 3, 4, 5, 6, 7, 8);
                     foreach ($boxs as $i) {
                         $title = "Title " . ($i + 1);
                         $description = "Decription " . ($i + 1);
@@ -86,10 +55,10 @@ echo '<script>alert(hello,world)</script>';
                     <div class="price" >₹' . $price . '</div>
                     <div class="rating" >';
                         for ($i = 0; $i < 5; $i++) {
-                            if ($i < $rating) {
-                                echo '<i class="fa-solid fa-star" style="color:#ffd43b;"></i>';
+                            if ($i < 3) {
+                                echo '<span class="fa fa-star" style="color:#ffd43b;"></span>';
                             } else {
-                                echo '<i class="fa-regular fa-star"></i>';
+                                echo '<span class="fa fa-star" style="color:#90A0A3;"></span>';
                             }
                         }
                         echo '</div>

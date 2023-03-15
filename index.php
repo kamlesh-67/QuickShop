@@ -1,8 +1,8 @@
 <?php
-if($_SERVER["REQUEST_METHOD"]=="POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $name = $_POST['name'];
-    echo '<script>alert("'.$name.' \n'.$email.'\n Thanks to Contect Us 🤗")</script>';
+    echo '<script>alert("' . $name . ' \n' . $email . '\n Thanks to Contect Us 🤗")</script>';
 }
 ?>
 
@@ -44,6 +44,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 <li><a href="#about">About</a></li>
                 <li><a href="#products">products</a></li>
                 <li><a href="#contect">Contect Us</a></li>
+            </ul>
+        </div>
+        <div class="menumo">
+            <ul id="menu">
+                <li id=menu-text><i class="fa-solid fa-bars"></i></li>
+                <li id=item-one><a href="#home">Home</a></li>
+                <li id=item-two><a href="#about">About</a></li>
+                <li id=item-three><a href="#products">products</a></li>
+                <li id=item-four><a href="#contect">Contect Us</a></li>
             </ul>
         </div>
     </header>
@@ -152,7 +161,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         <p>&copy; All Rights Reserved &nbsp;<a href="index.php"> QuickShop.com</a></p>
     </footer>
     <script src="script.js"></script>
-    
+
 </body>
 
 </html>
