@@ -1,11 +1,22 @@
 <?php
-$title = "watch";
+include("init.php");
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 } else {
     header("index.php");
     exit;
 }
+$query = "SELECT * FROM products WHERE productid=$id";
+                        $res = mysqli_query($server, $query);
+
+                        $row = mysqli_fetch_assoc($res);
+
+                        $title = $row["title"];
+                        $price = $row["price"];
+                        $description = $row["description"];
+                        $rating = $row["rating"];
+                        $review = $row["rewiew"];
+                        $img = "upload/" . $row["img"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,24 +41,24 @@ if (isset($_GET['id'])) {
     </header>
     <div class="container">
         <div class="image">
-            <img src="gellary/card_placeholder.png" alt="">
+            <img src=<?php echo $img;?> alt="">
         </div>
         <div class="info">
 
-            <h2 class="title">Title</h2>
-            <h5 class="description">description </h5>
-            <p class="price">₹600</p>
+            <h2 class="title"><?php echo $title;?></h2>
+            <h5 class="description"><?php echo $description;?> </h5>
+            <p class="price">₹<?php echo $price;?></p>
             <p class="rating"><?php
                                 for ($i = 0; $i < 5; $i++) {
-                                    if ($i < 3) {
+                                    if ($i < $rating) {
                                         echo '<span class="fa fa-star" style="color:#ffd43b;"></span>';
                                     } else {
                                         echo '<span class="fa fa-star" style="color:#90A0A3;"></span>';
                                     }
                                 }
                                 ?></p>
-            <p class="review">12 Reviews</p>
-            <a href="payment.php?id=12" class="buy" style="color:#000;">Buy</a>
+            <p class="review"><?php echo $review;?> Reviews</p>
+            <a href=<?php echo "payment.php?id=$id"; ?> class="buy" style="color:#000;">Buy</a>
         </div>
 
     </div>

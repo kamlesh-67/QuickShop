@@ -38,16 +38,29 @@ echo '<script>alert(hello,world)</script>';
             <div class="products-box">
                 <div class="products-grid">
                     <?php
-                    $boxs = array(0, 1, 2, 3, 4, 5, 6, 7, 8);
-                    foreach ($boxs as $i) {
-                        $title = "Title " . ($i + 1);
-                        $description = "Decription " . ($i + 1);
-                        $price = ($i + 2 * 30);
-                        $rating = ($i + 1);
-                        $review = ($i + 1 * 12);
-                        echo '<a href="detail.php?id=12" style="color:#000;"><div class="box">
+                    include("init.php");
+                    $query = "SELECT productid FROM products";
+                    $res = mysqli_query($server, $query);
+                    $ids = array();
+                    // loop through the result and add each ID to the array
+                    while ($row = mysqli_fetch_assoc($res)) {
+                        $ids[] = $row['productid'];
+                    }
+                    foreach ($ids as $i) {
+                        $query = "SELECT * FROM products WHERE productid=$i";
+                        $res = mysqli_query($server, $query);
+
+                        $row = mysqli_fetch_assoc($res);
+
+                        $title = $row["title"];
+                        $price = $row["price"];
+                        $description = $row["description"];
+                        $rating = $row["rating"];
+                        $review = $row["rewiew"];
+                        $img = "upload/" . $row["img"];
+                        echo '<a href="detail.php?id='.$i.'" style="color:#000;"><div class="box">
                     <div class="img">
-                        <img src="gellary/card_placeholder.png" alt="">
+                        <img src='.$img.' alt="">
                     </div>
                     <div class="card-info">
                     <div class="title" >' . $title . '</div>

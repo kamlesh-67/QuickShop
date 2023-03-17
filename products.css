@@ -110,6 +110,7 @@ header {
 
 .products .box img {
     height: 200px;
+    width: 250px;
     border-radius: 7px;
 }
 

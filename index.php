@@ -4,6 +4,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     echo '<script>alert("' . $name . ' \n' . $email . '\n Thanks to Contect Us 🤗")</script>';
 }
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -88,17 +91,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="products-grid">
                 <?php
-                $boxs = array(0, 1, 2, 3, 4, 5);
-                foreach ($boxs as $i) {
-                    $title = "Title " . ($i + 1);
-                    $description = "Decription " . ($i + 1);
-                    $price = ($i + 2 * 30);
-                    $rating = ($i + 1);
-                    $review = ($i + 1 * 12);
+                include("init.php");
+                $query = "SELECT productid FROM products";
+                $res = mysqli_query($server, $query);
+                $ids = array();
+                // loop through the result and add each ID to the array
+                $i = 0;
+                while ($row = mysqli_fetch_assoc($res)) {
+                    if ($i < 6) {
+                        $ids[] = $row['productid'];
+                    } else {
+                        break;
+                    }
+                    $i++;
+                }
+
+
+                foreach ($ids as $i) {
+                    $query = "SELECT * FROM products WHERE productid=$i";
+                    $res = mysqli_query($server, $query);
+
+                    $row = mysqli_fetch_assoc($res);
+
+                    $title = $row["title"];
+                    $price = $row["price"];
+                    $description = $row["description"];
+                    $rating = $row["rating"];
+                    $review = $row["rewiew"];
+                    $img = "upload/" . $row["img"];
+
                     echo '<a href="detail.php?id=12" style="color:#000;">
                     <div class="box">
                     <div class="img">
-                        <img src="gellary/card_placeholder.png" alt="">
+                        <img src='.$img.' alt="">
                     </div>
                     <div class="card-info">
                     <div class="title" >' . $title . '</div>

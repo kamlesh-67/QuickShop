@@ -108,6 +108,18 @@ footer p {
     color: gray;
 }
 
+.description {
+    overflow: hidden;
+    font-size: 15px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    height: 80px;
+    width: 30vw;
+}
+
 .info .buy {
     height: 50px;
     width: 150px;
@@ -169,6 +181,7 @@ form {
     .container .image img {
         height: 150%;
     }
+
     .container {
         height: 79.8vh;
         display: flex;

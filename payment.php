@@ -1,4 +1,24 @@
+
 <?php
+include("init.php");
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+} else {
+    header("index.php");
+    exit;
+}
+$query = "SELECT * FROM products WHERE productid=$id";
+                        $res = mysqli_query($server, $query);
+
+                        $row = mysqli_fetch_assoc($res);
+
+                        $title = $row["title"];
+                        $price = $row["price"];
+                        $description = $row["description"];
+                        $rating = $row["rating"];
+                        $review = $row["rewiew"];
+                        $img = "upload/" . $row["img"];
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo '<script>
@@ -24,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="payment.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="root.css">
-    <title>title</title>
+    <title><?php echo $title;?></title>
 </head>
 
 <body>
@@ -51,20 +71,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container">
         <div class="payment-box">
             <div class="title">
-                <img src="gellary/card_placeholder.png" alt="">
+                <img src=<?php echo $img;?> alt="">
                 <div class="info">
-                    <h4>Title</h4>
-                    <h5>Description Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro, necessitatibus?</h5>
-                    <p>₹500</p>
+                    <h4><?php echo $title;?></h4>
+                    <h5><?php echo $description;?></h5>
+                    <p>₹<?php echo $price;?></p>
 
                 </div>
             </div>
             <div class="payment-option">
                 <form action="#" method="post">
-                    <input type="text" name="cardnumber" id="cardnumber" maxlength=15 placeholder="Enter Your Card Number">
+                    <input type="text" name="cardnumber" required id="cardnumber" maxlength=15 placeholder="Enter Your Card Number">
                     <div class="personal">
                         <p style="font-size:12px;width:200px;">Date of expiry</p>
-                        <select id="month" name="month">
+                        <select id="month" name="month" required>
                             <option value="01">January</option>
                             <option value="02">February</option>
                             <option value="03">March</option>
@@ -78,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <option value="11">November</option>
                             <option value="12">December</option>
                         </select>
-                        <select id="year" name="year">
+                        <select id="year" name="year" required>
                             <option value="2023">2023</option>
                             <option value="2024">2024</option>
                             <option value="2025">2025</option>
@@ -88,9 +108,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <option value="2029">2029</option>
                             <!-- add more years here -->
                         </select>
-                        <input type="text" placeholder="CVV" name="CVV" id="CVV" maxlength=4>
+                        <input type="text" required placeholder="CVV" name="CVV" id="CVV" maxlength=4>
                     </div>
-                    <input type="text" placeholder="Enter Account Holder Name" name="cardholder" id="cardholder">
+                    <input type="text" required placeholder="Enter Account Holder Name" name="cardholder" id="cardholder">
                     <button type="submit">Buy</button>
                 </form>
             </div>
